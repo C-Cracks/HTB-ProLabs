@@ -1,0 +1,4 @@
+Test if file executes without flagging Windows Defender locally first.
+If so, obfuscate the file and try again (e.g. for PowerShell, using Invoke-Obfuscation. https://github.com/danielbohannon/Invoke-Obfuscation)
+  Also try changing words to camel-case or writing decimal/hex values of each char then encoding to text.
+  
