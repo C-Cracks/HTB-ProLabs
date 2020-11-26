@@ -1,3 +1,28 @@
+Check hosted shares
+In PowerShell:  Get-SmbShare
+net view
+
+------
+
+Check shares on other system:
+$cim = New-CimSession -ComputerName name-of-remote-host
+Get-SmbShare -CimSession $cim
+
+Invoke-Command -ComputerName 'dc01','fs01' -ScriptBlock {Get-SmbShare}
+
+net view \\computer /all 
+To format net view output:  net view \\savdaldc02 /all | select -Skip 7 | ?{$_ -match 'disk*'} | %{$_ -match '^(.+?)\s+Disk*'|out-null;$matches[1]}
+
+net view is the best way here but have noted the others for reference
+
+------
+
+Check shares accessible by host
+Empire: usemodule powershell/situational_awareness/network/powerview/share_finder ; set CheckShareAccess
+Find-DomainShare -CheckShareAccess in PowerView
+
+------
+
 ASREProasting
 Check if user has no_preauth_required set 
 
@@ -5,4 +30,5 @@ Using rubeus: asreproast /outfile:\Users\user\hash.txt /format:hashcat /user:mr-
 PowerShell Empire:  usemodule credentials/rubeus
 
 https://www.akimbocore.com/article/asrep-roasting/
----
+
+------
