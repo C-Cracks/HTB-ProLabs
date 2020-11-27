@@ -1,0 +1,3 @@
+View DNS cache (useful for enumerating the network)
+ipconfig /displaydns
+powershell: Get-DnsClientCache
