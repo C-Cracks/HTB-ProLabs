@@ -1,3 +1,14 @@
 View DNS cache (useful for enumerating the network)
 ipconfig /displaydns
 powershell: Get-DnsClientCache
+
+------
+
+All-around enum
+seatbelt is a great tool
+seatbelt.exe -Group All | seatbelt.exe -Group User
+
+powerview is also good: Invoke-AllChecks
+winenum is too
+
+------
